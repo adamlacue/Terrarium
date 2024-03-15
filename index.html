@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <!-- Theme Made By www.w3schools.com - No Copyright -->
-  <title>Terrarium</title>
+  <title>TerrariumPi</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -18,15 +18,15 @@
   p {font-size: 16px;}
   .margin {margin-bottom: 45px;}
   .bg-1 { 
-    background: linear-gradient(to bottom, #76ee70, #55b54f); /* Green */
+    background: linear-gradient(to bottom, #53ea6f, #55b54f); /* Green */
     color: #ffffff;
   }
   .bg-2 { 
-    background: linear-gradient(to bottom, #47a043, #418d3d); /* Darker Green  */
+    background: linear-gradient(to bottom, #47a043, #306b2c); /* Darker Green  */
     color: #ffffff;
   }
   .bg-3 { 
-    background: linear-gradient(to bottom, #2c6628, #1c3f19); /* Darkest Green */
+    background: linear-gradient(to bottom, #265a23, #1b3f18); /* Darkest Green */
     color: #ffffff;
   }
   .bg-4 { 
@@ -34,8 +34,8 @@
     color: #ffffff;
   }
   .bg-5 { 
-    background: linear-gradient(to bottom, #87a6ad, #375057); /* Light Blue Gray */
-    color: #555555;
+    background: linear-gradient(to bottom, #6f90f4, #0c343f); /* Light Blue Gray */
+    color: #fff;
   }
   .bg-6 { 
     background-color: #2f2f2f; /* Black Gray */
@@ -43,7 +43,7 @@
   }
   .btn-spin {
     background-color: #f6cc42; /* Change this to your desired color */
-    border-color: #d4610a; /* Change this to match the background color or use a different color */
+    border-color: #cc7a00; /* Change this to match the background color or use a different color */
     color: #0e5d3b; /* Text color */
     border-width: 3px; /* Adjust the border thickness as needed */
   }
@@ -53,25 +53,41 @@
   .btn-spin:active,
   .btn-spin.active,
   .open .dropdown-toggle.btn-spin {
-    background-color: #cc0000; /* Change this to your desired color on hover, focus, active */
-    border-color: #cc0000; /* Change this to match the background color or use a different color */
+    background-color: #cc7a00; /* Change this to your desired color on hover, focus, active */
+    border-color: #cc7a00; /* Change this to match the background color or use a different color */
     color: #ffffff; /* Text color on hover, focus, active */
   }
   .container-fluid {
     padding-top: 70px;
     padding-bottom: 70px;
   }
+  .role {
+    color: #ffffff; /* Example color */
+    margin-top: 10px; /* Example spacing */
+    font-size: 15px; /* Smaller font size */
+    font-style: italic;
+  }
+
   .navbar {
     padding-top: 15px;
     padding-bottom: 15px;
     border: 0;
     border-radius: 0;
     margin-bottom: 0;
-    font-size: 12px;
+    font-size: 14px;
     letter-spacing: 5px;
+  }
+  .navbar-brand-title {
+    font-size: 24px; /* Adjust the size as needed */
+    font-weight: normal; /* Optional: if you want the title to be bold */
   }
   .navbar-nav  li a:hover {
     color: #1abc9c !important;
+  }
+  #aboutTerrarium p {
+    max-width: 1000px; /* Adjust this value as needed */
+    margin: auto; /* Centers the paragraph text */
+    margin-bottom: 20px; 
   }
   </style>
 </head>
@@ -86,7 +102,10 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">Terrarium</a>
+      <a class="navbar-brand" href="#">
+        <img src="terrarium-favicon-color.png" alt="Logo" style="display: inline-block; width: 30px; height: 30px; margin-right: 5px; vertical-align: middle;">
+        <span class="navbar-brand-title">TerrariumPi</span>
+      </a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
@@ -121,8 +140,8 @@
 </div>
 
 <!-- Fourth Container -->
-<div class="container-fluid bg-4 text-center">
-  <h3 class="margin">About the Terrarium Project</h3>
+<div class="container-fluid bg-4 text-center" id="aboutTerrarium">
+  <h2 class="margin">About the Terrarium Project</h2>
   <p>Bacon ipsum dolor amet pork loin swine irure beef prosciutto ad sed cupim flank jowl shoulder kevin aute beef ribs kielbasa. Qui ea jerky kevin. Ea cow non sed filet mignon dolor enim nisi beef dolore ipsum ut shoulder. Chuck dolor cupim eu qui, pork chop non ea magna est excepteur ham hock corned beef. Fatback ball tip ullamco, ad et ea cow excepteur officia.</p>
 
   <p>Lorem est porchetta leberkas irure aliqua. In cow ut occaecat, aliquip ham hock shoulder aute. Fugiat in adipisicing tail duis sausage sunt, short loin esse deserunt mollit ullamco turducken alcatra shankle. Elit pork chop tenderloin magna boudin beef ribs bresaola id in meatloaf shank biltong non. Dolor nisi shank occaecat, tail mollit ipsum biltong in meatloaf sirloin ullamco cupim. Occaecat commodo aute buffalo. Capicola cillum spare ribs pancetta drumstick, exercitation short loin proident.</p>
@@ -134,19 +153,22 @@
 
 <!-- Fifth Container (Grid) -->
 <div class="container-fluid bg-5 text-center">    
-  <h3 class="margin">Creators</h3><br>
+  <h2 class="margin">Creators</h2><br>
   <div class="row">
     <div class="col-sm-4">
-      <p>Adam J. Lacue</p>
+      <h3>Adam J. Lacue</h3>
       <img src="IMG_5650(2).JPG" class="img-responsive margin" style="width:100%" alt="Image">
+      <h4 class="role">Full-Stack Web Developer</h4>
     </div>
     <div class="col-sm-4"> 
-      <p>Dylan Corfield</p>
+      <h3>Dylan Corfield</h3>
       <img src="—Pngtree—user vector avatar_4830521.png" class="img-responsive margin" style="width:100%" alt="Image">
+      <h4 class="role">DevOps Lead</h4> 
     </div>
     <div class="col-sm-4"> 
-      <p>Sam Krisko</p>
+      <h3>Sam Krisko</h3>
       <img src="—Pngtree—user vector avatar_4830521.png" class="img-responsive margin" style="width:100%" alt="Image">
+      <h4 class="role">DevOps/Security Professional</h4> 
     </div>
   </div>
 </div>
