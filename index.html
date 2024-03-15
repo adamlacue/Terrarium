@@ -5,6 +5,7 @@
   <title>TerrariumPi</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="terrarium-favicon-color.png" type="image/x-icon"> 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -20,26 +21,32 @@
   .bg-1 { 
     background: linear-gradient(to bottom, #53ea6f, #55b54f); /* Green */
     color: #ffffff;
+    border-bottom: 3px solid #12121c; /* Add border on the bottom */
   }
   .bg-2 { 
     background: linear-gradient(to bottom, #47a043, #306b2c); /* Darker Green  */
     color: #ffffff;
+    border-bottom: 3px solid #12121c; /* Add border on the bottom */
   }
   .bg-3 { 
     background: linear-gradient(to bottom, #265a23, #1b3f18); /* Darkest Green */
     color: #ffffff;
+    border-bottom: 3px solid #12121c; /* Add border on the bottom */
   }
   .bg-4 { 
     background: linear-gradient(to bottom, #78786c, #3f3f3a); /* Gray */
     color: #ffffff;
+    border-bottom: 3px solid #12121c; /* Add border on the bottom */
   }
   .bg-5 { 
     background: linear-gradient(to bottom, #6f90f4, #0c343f); /* Light Blue Gray */
     color: #fff;
+    border-bottom: 3px solid #12121c; /* Add border on the bottom */
   }
   .bg-6 { 
     background-color: #2f2f2f; /* Black Gray */
     color: #fff;
+    border-bottom: 3px solid #12121c; /* Add border on the bottom */
   }
   .btn-spin {
     background-color: #f6cc42; /* Change this to your desired color */
@@ -81,6 +88,14 @@
     font-size: 24px; /* Adjust the size as needed */
     font-weight: normal; /* Optional: if you want the title to be bold */
   }
+  .navbar-fixed-top {
+    background: linear-gradient(to bottom, #6f90f4, #637bc1); /* Change this to your desired background color */
+    border-color: transparent; /* Optionally remove the border */
+    border-bottom: 3px solid #12121c; /* Add border on the bottom */
+  }
+  .navbar-fixed-top .navbar-brand-title {
+    color: #fff; /* Change text color to ensure visibility */
+  }
   .navbar-nav  li a:hover {
     color: #1abc9c !important;
   }
@@ -94,7 +109,7 @@
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -119,8 +134,8 @@
 <div class="container-fluid bg-1 text-center">
   <h2 class="margin">Livestream</h2>
   <img src="kisspng-terrarium-glass-bell-jar-cloche-container-5b0879535a7b84.9558064615272820033706.png" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">
-  <h4>Take a look at how the terrarium is doing right now</h4>
-    <a href="#" class="btn btn-default btn-lg btn-spin">
+  <h4>Take a look at how TerrariumPi is doing right now.</h4>
+    <button onclick="sendPostRequest()" class="btn btn-default btn-lg btn-spin">
     <span class="glyphicon glyphicon-refresh"></span> Spin
   </a>
 </div>
@@ -141,7 +156,7 @@
 
 <!-- Fourth Container -->
 <div class="container-fluid bg-4 text-center" id="aboutTerrarium">
-  <h2 class="margin">About the Terrarium Project</h2>
+  <h2 class="margin">About the TerrariumPi</h2>
   <p>Bacon ipsum dolor amet pork loin swine irure beef prosciutto ad sed cupim flank jowl shoulder kevin aute beef ribs kielbasa. Qui ea jerky kevin. Ea cow non sed filet mignon dolor enim nisi beef dolore ipsum ut shoulder. Chuck dolor cupim eu qui, pork chop non ea magna est excepteur ham hock corned beef. Fatback ball tip ullamco, ad et ea cow excepteur officia.</p>
 
   <p>Lorem est porchetta leberkas irure aliqua. In cow ut occaecat, aliquip ham hock shoulder aute. Fugiat in adipisicing tail duis sausage sunt, short loin esse deserunt mollit ullamco turducken alcatra shankle. Elit pork chop tenderloin magna boudin beef ribs bresaola id in meatloaf shank biltong non. Dolor nisi shank occaecat, tail mollit ipsum biltong in meatloaf sirloin ullamco cupim. Occaecat commodo aute buffalo. Capicola cillum spare ribs pancetta drumstick, exercitation short loin proident.</p>
@@ -177,6 +192,24 @@
 <footer class="container-fluid bg-6 text-center">
   <p>Bootstrap Theme Made By <a href="https://www.w3schools.com">www.w3schools.com</a></p> 
 </footer>
+
+<script>
+  function sendPostRequest() {
+    $.ajax({
+      type: 'POST',
+      url: 'your-post-endpoint-url',
+      data: { key: 'value' }, // Add your data here
+      success: function(response) {
+        // Handle success response
+        console.log('POST request successful');
+      },
+      error: function(xhr, status, error) {
+        // Handle error response
+        console.error('Error:', error);
+      }
+    });
+  }
+  </script>
 
 </body>
 </html>
