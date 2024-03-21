@@ -196,12 +196,12 @@
 <script>
   function sendPostRequest() {
     $.ajax({
-      type: 'POST',
-      url: 'your-post-endpoint-url',
+      type: 'GET',
+      url: '/api/LED',
       data: { key: 'value' }, // Add your data here
       success: function(response) {
         // Handle success response
-        console.log('POST request successful');
+        console.log('GET request successful');
       },
       error: function(xhr, status, error) {
         // Handle error response
